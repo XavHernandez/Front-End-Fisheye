@@ -5,7 +5,7 @@
 }
 
 .photograph-header {
-  background-color: #fafafa;
+  background-color: var(--lightgrey);
   height: 300px;
   margin: 0 100px;
 }
@@ -18,14 +18,14 @@
   width: 170px;
   height: 70px;
   border: none;
-  background-color: #901c1c;
+  background-color: var(--darkred);
   border-radius: 5px;
   cursor: pointer;
 }
 
 .modal {
   border-radius: 5px;
-  background-color: #db8876;
+  background-color: var(--lightred);
   width: 50%;
   display: flex;
   flex-direction: column;
@@ -58,7 +58,7 @@ form {
 }
 
 form label {
-  color: #312e2e;
+  color: var(--darkred);
   font-size: 36px;
 }
 
