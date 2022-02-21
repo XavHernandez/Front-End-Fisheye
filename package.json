@@ -1,0 +1,19 @@
+{
+  "name": "p6_xavier_hernandez",
+  "version": "1.0.0",
+  "description": "Project 6 - OC Front-End",
+  "main": "index.js",
+  "scripts": {
+    "test": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/XavHernandez/Front-End-Fisheye.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/XavHernandez/Front-End-Fisheye/issues"
+  },
+  "homepage": "https://github.com/XavHernandez/Front-End-Fisheye#readme"
+}
