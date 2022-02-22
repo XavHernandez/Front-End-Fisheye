@@ -9,8 +9,7 @@ function photographerProfilFactory(data) {
         <p class="photographer_location">${data.city}, ${data.country}</p>
         <p class="photographer_tagline">${data.tagline}</p>
         <p class="photographer_price">${data.price}€/jour</p>
-      </article>
-    `;
+      </article>`;
     return profilCard;
   }
   return { getPhotographerCardDOM };
