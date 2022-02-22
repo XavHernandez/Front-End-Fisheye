@@ -1,4 +1,4 @@
-function photographerFactory(data) {
+function photographerProfilFactory(data) {
   console.log(data);
   const { name, portrait } = data;
 
@@ -17,4 +17,4 @@ function photographerFactory(data) {
   return { name, picture, getPhotographerCardDOM };
 }
 
-export { photographerFactory };
+export { photographerProfilFactory };
