@@ -1,6 +1,4 @@
 function photographerProfilFactory(data) {
-  console.log(data);
-
   function getPhotographerCardDOM() {
     const profilCard = `
       <article class="photographer_card">

@@ -58,6 +58,11 @@ h1 {
   color: var(--lightred);
   font-size: 1.8rem;
   cursor: pointer;
+  transition: color 0.3s ease-out;
+}
+
+.photographer_section a:hover {
+  color: var(--darkred);
 }
 
 .photographer_section a:focus-visible {
