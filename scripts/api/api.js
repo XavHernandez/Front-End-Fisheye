@@ -1,8 +1,41 @@
-async function getData() {
-  return fetch("../../data/photographers.json")
-    .then((response) => response.json())
-    .then((data) => data)
-    .catch((error) => console.log("Unable to retrieve data from Api!", error));
-}
+export default class API {
+  /**
+   *
+   * @param {string} url
+   */
 
-export { getData };
+  constructor(url) {
+    this.url = url;
+  }
+
+  async getPhotographersProfils() {
+    const response = await fetch(this.url);
+    const responseData = await response.json();
+
+    if (!response.ok) {
+      const error = new Error(
+        responseData.message ||
+          "Unable to retrieve photographers data from Api!"
+      );
+      throw error;
+    }
+
+    const { photographers } = responseData;
+    return photographers;
+  }
+
+  async getMedias() {
+    const response = await fetch(this.url);
+    const responseData = await response.json();
+
+    if (!response.ok) {
+      const error = new Error(
+        responseData.message || "Unable to retrieve medias data from Api!"
+      );
+      throw error;
+    }
+
+    const { media } = responseData;
+    return media;
+  }
+}

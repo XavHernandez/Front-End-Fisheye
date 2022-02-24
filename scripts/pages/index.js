@@ -1,24 +1,16 @@
-import { getData } from "../api/api.js";
-import { photographerProfilFactory } from "../factories/photographerProfil.js";
+import API from "../api/api.js";
+import PhotographerProfil from "../constructors/photographerProfil.js";
 
-async function getPhotographers() {
-  const { photographers } = await getData();
-  return photographers;
+export default class IndexPage {
+  static async render() {
+    const fisheyeData = new API("../../data/photographers.json");
+    const profils = await fisheyeData.getPhotographersProfils();
+
+    profils.forEach((profil) => {
+      const formatedProfil = new PhotographerProfil(profil);
+      let profilContainer = document.querySelector(".photographer_section");
+      const profilCard = formatedProfil.getPhotographerCardDOM();
+      profilContainer.innerHTML += profilCard;
+    });
+  }
 }
-
-async function displayData(photographers) {
-  const photographersSection = document.querySelector(".photographer_section");
-
-  photographers.forEach((photographer) => {
-    const photographerModel = photographerProfilFactory(photographer);
-    const photographerCardDOM = photographerModel.getPhotographerCardDOM();
-    photographersSection.innerHTML += photographerCardDOM;
-  });
-}
-
-async function init() {
-  const photographers = await getPhotographers();
-  displayData(photographers);
-}
-
-init();
