@@ -11,7 +11,6 @@ export default class API {
   async getPhotographersProfils() {
     const response = await fetch(this.url);
     const responseData = await response.json();
-
     if (!response.ok) {
       const error = new Error(
         responseData.message ||
@@ -19,7 +18,6 @@ export default class API {
       );
       throw error;
     }
-
     const { photographers } = responseData;
     return photographers;
   }
@@ -27,14 +25,12 @@ export default class API {
   async getMedias() {
     const response = await fetch(this.url);
     const responseData = await response.json();
-
     if (!response.ok) {
       const error = new Error(
         responseData.message || "Unable to retrieve medias data from Api!"
       );
       throw error;
     }
-
     const { media } = responseData;
     return media;
   }
