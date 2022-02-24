@@ -16,16 +16,21 @@ export default class PhotographerPage {
       (media) => media.photographerId === +selectedID
     );
 
-    //render header
-    //render medias gallery
-
-    //carrousel (video+image)
-    //contactForm
-    //likes
-
-    //accessibility
-
     displayModal();
     closeModal();
   }
 }
+
+// getProfilHeader() {
+//   in PhotographerProfil
+// }
+
+// getMediasGallery() {
+//   in new Media Constructor
+// }
+
+//carrousel (video+image)
+//contactForm
+//likes
+
+//accessibility
