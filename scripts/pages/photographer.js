@@ -32,6 +32,10 @@ export default class PhotographerPage {
 //   in new Media Constructor
 // }
 
+// getPhotographerMetrics() {
+//  in PhotgrapherProfil
+// }
+
 //carrousel (video+image)
 //contactForm
 //likes

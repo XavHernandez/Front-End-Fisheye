@@ -8,7 +8,7 @@ export default class PagesFactory {
    */
 
   constructor(pathname) {
-    if (pathname === "/index.html" || pathname === "/") {
+    if (pathname === "/" || pathname === "/index.html") {
       return IndexPage.render();
     } else if (pathname === "/photographer.html") {
       return PhotographerPage.render();

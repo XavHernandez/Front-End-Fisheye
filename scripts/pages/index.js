@@ -9,8 +9,8 @@ export default class IndexPage {
     profils.forEach((profil) => {
       const formatedProfil = new PhotographerProfil(profil);
       const profilCard = formatedProfil.getPhotographerCardDOM();
-      const profilContainer = document.querySelector(".photographer_section");
-      profilContainer.innerHTML += profilCard;
+      const profilsContainer = document.querySelector(".photographer_section");
+      profilsContainer.innerHTML += profilCard;
     });
   }
 }

@@ -39,9 +39,7 @@ export default class PhotographerProfil {
           Contactez-moi
         </button>
         <img class="photographer_img" src="/assets/photographers/${this.portrait}" alt="Portrait de ${this.name}">
-      </header>
-    `;
-
+      </header>`;
     return header;
   }
 }
