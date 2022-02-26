@@ -4,10 +4,46 @@
   display: none;
 }
 
-.photograph-header {
+.photographer_header {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+  padding: 2rem 4rem;
   background-color: var(--lightgrey);
   height: 300px;
-  margin: 0 100px;
+  margin: 2rem 100px 1rem 100px;
+}
+
+.photographer_infos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.photographer_infos .photographer_name {
+  color: var(--lightred);
+  font-size: 4rem;
+  margin: 0;
+}
+
+.photographer_infos .photographer_location {
+  margin-top: 1rem;
+}
+
+.photographer_infos .photographer_tagline {
+  color: var(--darkgrey);
+  margin: 0.2rem 0;
+  font-size: 1.2rem;
+  margin-top: 1.2rem;
+}
+
+.photographer_img {
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  height: 200px;
+  width: 200px;
+  margin-right: 2rem;
 }
 
 .contact_button {
@@ -15,6 +51,7 @@
   font-weight: bold;
   color: white;
   padding: 11px;
+  margin-right: 20px;
   width: 170px;
   height: 70px;
   border: none;

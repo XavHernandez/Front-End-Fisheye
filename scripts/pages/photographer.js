@@ -1,4 +1,5 @@
 import API from "../api/api.js";
+import PhotographerProfil from "../constructors/photographerProfil.js";
 import { displayModal, closeModal } from "../utils/contactForm.js";
 
 export default class PhotographerPage {
@@ -7,23 +8,25 @@ export default class PhotographerPage {
     const profils = await fisheyeData.getPhotographersProfils();
     const medias = await fisheyeData.getMedias();
 
-    const queryID = window.location.search;
-    const paramsID = new URLSearchParams(queryID);
+    const paramsID = new URLSearchParams(window.location.search);
     const selectedID = paramsID.get("id");
 
-    const selectedProfil = profils.find((profil) => profil.id === +selectedID);
-    const selectedMedia = medias.filter(
+    const selectedProfilID = profils.find(
+      (profil) => profil.id === +selectedID
+    );
+    const selectedMedias = medias.filter(
       (media) => media.photographerId === +selectedID
     );
+
+    const selectedProfil = new PhotographerProfil(selectedProfilID);
+    const selectedProfilHeader = selectedProfil.getPhotographerHeader();
+    const headerWrapper = document.querySelector("#main");
+    headerWrapper.innerHTML += selectedProfilHeader;
 
     displayModal();
     closeModal();
   }
 }
-
-// getProfilHeader() {
-//   in PhotographerProfil
-// }
 
 // getMediasGallery() {
 //   in new Media Constructor

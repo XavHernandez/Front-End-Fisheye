@@ -26,4 +26,22 @@ export default class PhotographerProfil {
       </article>`;
     return profilCard;
   }
+
+  getPhotographerHeader() {
+    const header = `
+      <header class="photographer_header">
+        <div class="photographer_infos">
+          <h1 class="photographer_name">${this.name}</h1>
+          <p class="photographer_location">${this.city}, ${this.country}</p>
+          <p class="photographer_tagline">${this.tagline}</p>
+        </div>
+        <button class="contact_button" role="button" aria-label="Contact Me">
+          Contactez-moi
+        </button>
+        <img class="photographer_img" src="/assets/photographers/${this.portrait}" alt="Portrait de ${this.name}">
+      </header>
+    `;
+
+    return header;
+  }
 }
