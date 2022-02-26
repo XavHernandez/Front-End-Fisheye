@@ -14,14 +14,14 @@ export default class PhotographerPage {
     const selectedProfilID = profils.find(
       (profil) => profil.id === +selectedID
     );
-    const selectedMedias = medias.filter(
-      (media) => media.photographerId === +selectedID
-    );
-
     const selectedProfil = new PhotographerProfil(selectedProfilID);
     const selectedProfilHeader = selectedProfil.getPhotographerHeader();
     const headerWrapper = document.querySelector("#main");
     headerWrapper.innerHTML += selectedProfilHeader;
+
+    const selectedMedias = medias.filter(
+      (media) => media.photographerId === +selectedID
+    );
 
     displayModal();
     closeModal();
