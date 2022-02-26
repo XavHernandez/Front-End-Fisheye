@@ -30,10 +30,11 @@ export default class PhotographerPage {
 
 // getMediasGallery() {
 //   in new Media Constructor
+//   getTotalLikes()
 // }
 
 // getPhotographerMetrics() {
-//  in PhotgrapherProfil
+//  in PhotographerProfil
 // }
 
 //carrousel (video+image)
