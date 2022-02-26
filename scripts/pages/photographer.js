@@ -17,7 +17,7 @@ export default class PhotographerPage {
     const selectedProfil = new PhotographerProfil(selectedProfilID);
     const selectedProfilHeader = selectedProfil.getPhotographerHeader();
     const headerWrapper = document.querySelector("#main");
-    headerWrapper.innerHTML += selectedProfilHeader;
+    headerWrapper.insertAdjacentHTML("afterbegin", selectedProfilHeader);
 
     const selectedMedias = medias.filter(
       (media) => media.photographerId === +selectedID
