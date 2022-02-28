@@ -1,4 +1,5 @@
 @import url("style.css");
+@import url("modal.css");
 
 #contact_modal {
   display: none;
@@ -64,60 +65,70 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 70px;
-  margin-top: 100px;
-  margin-bottom: 75px;
+  margin: 100px 0px 75px 0px;
+  align-content: center;
 }
 
-.modal {
-  border-radius: 5px;
-  background-color: var(--lightred);
-  width: 50%;
+.media_card {
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+  justify-self: center;
+  max-width: 350px;
+}
+
+.media_item {
+  width: 350px;
+  height: 350px;
+  object-position: center;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.media_infos {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: space-between;
-  padding: 35px;
-  margin: auto;
+  margin-top: 0.6rem;
 }
 
-.modal header {
-  justify-content: space-between;
-  width: 100%;
-}
-
-.modal header img {
-  cursor: pointer;
-}
-
-.modal header h2 {
-  font-size: 64px;
-  font-weight: normal;
-  text-align: center;
-}
-
-form {
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-form label {
+.media_title {
   color: var(--darkred);
-  font-size: 36px;
+  margin: 0px;
 }
 
-form div {
+.media_likes {
   display: flex;
-  flex-direction: column;
-  width: 100%;
-  align-items: self-start;
-  margin-bottom: 26px;
 }
 
-form input {
-  width: 100%;
-  height: 68px;
-  border: none;
-  border-radius: 5px;
+.media_likes .heart {
+  color: var(--darkred);
+  width: 20px;
+  height: 20px;
+}
+
+.media_count {
+  color: var(--darkred);
+  font-size: 1.2rem;
+  margin-right: 0.4rem;
+}
+
+.photographer_metrics {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  z-index: 2;
+  bottom: -8px;
+  right: 105px;
+  background: var(--lightred);
+  border-radius: 8px;
+  padding: 0 1rem;
+}
+
+.photographer_metrics span {
+  margin-left: 0.2rem;
+}
+
+.photographer_metrics .price {
+  margin-left: 0.6rem;
 }
