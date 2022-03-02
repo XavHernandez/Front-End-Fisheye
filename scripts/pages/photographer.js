@@ -2,6 +2,7 @@ import API from "../api/api.js";
 import PhotographerProfil from "../constructors/photographerProfil.js";
 import PhotographerMedia from "../constructors/photographerMedia.js";
 import MediasFilter from "../features/mediasFilter.js";
+import { sortByLikes } from "../utils/filters.js";
 import { displayModal, closeModal } from "../utils/contactForm.js";
 
 export default class PhotographerPage {
@@ -28,6 +29,8 @@ export default class PhotographerPage {
     const selectedMedias = medias.filter(
       (media) => media.photographerId === +selectedID
     );
+    sortByLikes(selectedMedias);
+
     let totalLikes = 0;
     selectedMedias.forEach((media) => {
       totalLikes += media.likes;
@@ -40,7 +43,7 @@ export default class PhotographerPage {
       selectedProfil.getPhotographerMetrics(totalLikes);
     headerWrapper.insertAdjacentHTML("beforeend", selectedProfilMetrics);
 
-    //filters features
+    //filters feature
     const filtersFeature = new MediasFilter(selectedMedias);
     filtersFeature.render();
 
@@ -50,7 +53,6 @@ export default class PhotographerPage {
 }
 
 //carrousel (video+image)
-//filters
 //contactForm
 //likes
 

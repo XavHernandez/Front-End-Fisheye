@@ -1,5 +1,5 @@
 import PhotographerMedia from "../constructors/photographerMedia.js";
-// import { sort1, sort2, sort3 } from "../utils/filters";
+import { sortByLikes, sortByDate, sortByTitle } from "../utils/filters.js";
 
 export default class MediasFilter {
   constructor(medias) {
@@ -14,23 +14,22 @@ export default class MediasFilter {
 
   async filterMedias(query) {
     this.clearMediasContainer();
-    let filteredMedias;
 
     switch (query) {
       case "likes":
-        // filteredMedias = sort1(this.medias);
+        sortByLikes(this.medias);
         break;
       case "date":
-        // filteredMedias = sort2(this.medias);
+        sortByDate(this.medias);
         break;
       case "title":
-        // filteredMedias = sort3(this.medias);
+        sortByTitle(this.medias);
         break;
       default:
-        return (filteredMedias = this.medias);
+        return this.medias;
     }
 
-    filteredMedias.forEach((media) => {
+    this.medias.forEach((media) => {
       const formatedMedia = new PhotographerMedia(media);
       const mediaCard = formatedMedia.getMediaCardDOM();
       this.mediasContainer.innerHTML += mediaCard;
