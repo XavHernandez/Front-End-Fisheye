@@ -1,6 +1,7 @@
 import API from "../api/api.js";
 import PhotographerProfil from "../constructors/photographerProfil.js";
 import PhotographerMedia from "../constructors/photographerMedia.js";
+import MediasFilter from "../features/mediasFilter.js";
 import { displayModal, closeModal } from "../utils/contactForm.js";
 
 export default class PhotographerPage {
@@ -38,6 +39,10 @@ export default class PhotographerPage {
     const selectedProfilMetrics =
       selectedProfil.getPhotographerMetrics(totalLikes);
     headerWrapper.insertAdjacentHTML("beforeend", selectedProfilMetrics);
+
+    //filters features
+    const filtersFeature = new MediasFilter(selectedMedias);
+    filtersFeature.render();
 
     displayModal();
     closeModal();

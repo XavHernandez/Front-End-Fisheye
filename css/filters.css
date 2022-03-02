@@ -1,0 +1,31 @@
+.filters_section {
+  margin-left: 100px;
+  margin-top: 20px;
+}
+
+.filter-form {
+  display: block;
+}
+
+#Order_By {
+  color: black;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+#filter-select {
+  background-color: var(--darkred);
+  color: white;
+  border: 2px solid white;
+  height: 50px;
+  width: 150px;
+  border-radius: 5px;
+  margin-left: 20px;
+  padding: 4px;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+#filter-select:focus-visible {
+  outline: 2px solid var(--darkred);
+}
