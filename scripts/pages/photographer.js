@@ -2,6 +2,8 @@ import API from "../api/api.js";
 import PhotographerProfil from "../constructors/photographerProfil.js";
 import PhotographerMedia from "../constructors/photographerMedia.js";
 import MediasFilter from "../features/mediasFilter.js";
+import LikesCounter from "../features/likesCounter.js";
+import LikesObserver from "../features/likesObserver.js";
 import { sortByLikes } from "../utils/filters.js";
 import { displayModal, closeModal } from "../utils/contactForm.js";
 
@@ -25,7 +27,10 @@ export default class PhotographerPage {
     const headerWrapper = document.querySelector("#main");
     headerWrapper.insertAdjacentHTML("afterbegin", selectedProfilHeader);
 
-    //filter medias data and display selected profil medias
+    //init Likes Counters Observer
+    const likesObserver = new LikesObserver();
+
+    //filter medias data and display selected profil medias + likes counters
     const selectedMedias = medias.filter(
       (media) => media.photographerId === +selectedID
     );
@@ -34,16 +39,19 @@ export default class PhotographerPage {
     let totalLikes = 0;
     selectedMedias.forEach((media) => {
       totalLikes += media.likes;
-      const formatedMedia = new PhotographerMedia(media);
+      const formatedMedia = new PhotographerMedia(media, likesObserver);
       const mediaCard = formatedMedia.getMediaCardDOM();
       const mediasContainer = document.querySelector(".medias_section");
       mediasContainer.innerHTML += mediaCard;
+      const likeCounter = new LikesCounter(media.likes, media.id);
+      likesObserver.subscribe(likeCounter);
+      formatedMedia.handleLikesCounter();
     });
     const selectedProfilMetrics =
       selectedProfil.getPhotographerMetrics(totalLikes);
     headerWrapper.insertAdjacentHTML("beforeend", selectedProfilMetrics);
 
-    //filters feature
+    //filters medias feature
     const filtersFeature = new MediasFilter(selectedMedias);
     filtersFeature.render();
 

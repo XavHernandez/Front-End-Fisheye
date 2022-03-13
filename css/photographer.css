@@ -65,7 +65,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 70px;
-  margin: 50px 0px 75px 0px;
+  margin: 50px 100px 75px 100px;
   align-content: center;
 }
 
@@ -99,6 +99,7 @@
 
 .media_likes {
   display: flex;
+  cursor: pointer;
 }
 
 .media_likes .heart {
@@ -111,6 +112,14 @@
   color: var(--darkred);
   font-size: 1.2rem;
   margin-right: 0.4rem;
+}
+
+.liked_count {
+  font-weight: bold;
+}
+
+.liked_heart {
+  animation: likes 0.3s ease-out 2 forwards;
 }
 
 .photographer_metrics {
@@ -131,4 +140,22 @@
 
 .photographer_metrics .price {
   margin-left: 0.6rem;
+}
+
+@keyframes likes {
+  0% {
+    transform: scale(1);
+  }
+  20% {
+    transform: scale(1.2);
+  }
+  40% {
+    transform: scale(1);
+  }
+  60% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
 }

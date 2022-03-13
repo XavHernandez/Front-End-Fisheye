@@ -1,9 +1,10 @@
 export default class PhotographerMedia {
   /**
    * @param {object} data
+   * @param {object} observer
    */
 
-  constructor(data) {
+  constructor(data, observer) {
     this.id = data.id;
     this.photographerId = data.photographerId;
     this.title = data.title;
@@ -12,13 +13,33 @@ export default class PhotographerMedia {
     this.price = data.price;
     this.video = data.video || null;
     this.image = data.image || null;
+    this.observer = observer;
+  }
+
+  handleLikesCounter() {
+    const mediaLikes = document.querySelector(`[data-id="${this.id}"]`);
+    const mediaCount = mediaLikes.querySelector(".media_count");
+    const heart = mediaLikes.querySelector(".heart");
+    mediaLikes.addEventListener("click", () => {
+      if (mediaCount.classList.contains("liked_count")) {
+        console.log("unlike");
+        this.observer.fire("UNLIKE");
+        mediaCount.classList.remove("liked_count");
+        heart.classList.remove("liked_heart");
+      } else {
+        console.log("like");
+        this.observer.fire("LIKE");
+        mediaCount.classList.add("liked_count");
+        heart.classList.add("liked_heart");
+      }
+    });
   }
 
   getMediaCardDOM() {
     let media;
     this.image !== null
-      ? (media = `<img class="media_item" src="/assets/medias/${this.image}" alt="${this.title}"></img>`)
-      : (media = `<video class="media_item" aria-label="${this.title}" width="350" height="350">
+      ? (media = `<img decoding="async" class="media_item" src="/assets/medias/${this.image}" alt="${this.title}"></img>`)
+      : (media = `<video class="media_item" aria-label="${this.title}" width="350" height="350" controls>
           <source src="/assets/medias/${this.video}#t=0.1" type="video/mp4" />
         </video>`);
 
@@ -27,12 +48,13 @@ export default class PhotographerMedia {
         ${media}
         <div class="media_infos">
           <h2 class="media_title">${this.title}</h2>
-          <div class="media_likes">
+          <div class="media_likes" data-id=${this.id}>
             <div class="media_count">${this.likes}</div>
             <div class="heart" aria-label="Media number of likes">&#9829</div>
           </div>
         </div>
       </article>`;
+
     return mediaCard;
   }
 }
