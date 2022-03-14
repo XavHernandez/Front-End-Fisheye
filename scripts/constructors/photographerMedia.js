@@ -22,11 +22,11 @@ export default class PhotographerMedia {
     const heart = mediaLikes.querySelector(".heart");
     mediaLikes.addEventListener("click", () => {
       if (mediaCount.classList.contains("liked_count")) {
-        this.observer.fire("UNLIKE");
+        this.observer.fire("UNLIKE", this.id);
         mediaCount.classList.remove("liked_count");
         heart.classList.remove("liked_heart");
       } else {
-        this.observer.fire("LIKE");
+        this.observer.fire("LIKE", this.id);
         mediaCount.classList.add("liked_count");
         heart.classList.add("liked_heart");
       }

@@ -36,6 +36,10 @@ export default class MediasFilter {
     });
   }
 
+  getMedias() {
+    return this.medias;
+  }
+
   onChangeFilter() {
     this.filtersSection
       .querySelector("form")

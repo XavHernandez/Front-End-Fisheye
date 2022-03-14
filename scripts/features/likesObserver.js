@@ -11,7 +11,7 @@ export default class LikesObserver {
     this.observers = this.observers.filter((obs) => obs !== observer);
   }
 
-  fire(action) {
-    this.observers.forEach((observer) => observer.update(action));
+  fire(action, mediaId) {
+    this.observers.find((observer) => observer.id === mediaId).update(action);
   }
 }

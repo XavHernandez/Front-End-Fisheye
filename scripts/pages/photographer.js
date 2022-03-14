@@ -54,15 +54,25 @@ export default class PhotographerPage {
     headerWrapper.insertAdjacentHTML("beforeend", selectedProfilMetrics);
 
     //activate likes counters observer
-    formatedMedias.forEach((media) => {
-      const likeCounter = new LikesCounter(media.likes, media.id, totalLikes);
-      likesObserver.subscribe(likeCounter);
-      media.handleLikesCounter();
-    });
+    function activateCounters(mediaList) {
+      mediaList.forEach((media) => {
+        const likeCounter = new LikesCounter(media.likes, media.id, totalLikes);
+        likesObserver.subscribe(likeCounter);
+        media.handleLikesCounter();
+      });
+    }
+    activateCounters(formatedMedias);
 
     //filters medias feature
-    const filtersFeature = new MediasFilter(selectedMedias);
+    const filtersFeature = new MediasFilter(formatedMedias);
     filtersFeature.render();
+    //re-apply likes observers after filtering
+    document
+      .querySelector(".filters_section")
+      .querySelector("form")
+      .addEventListener("change", () => {
+        activateCounters(filtersFeature.getMedias());
+      });
 
     displayModal();
     closeModal();
@@ -71,6 +81,5 @@ export default class PhotographerPage {
 
 //carrousel (video+image)
 //contactForm
-//likes
 
 //accessibility
