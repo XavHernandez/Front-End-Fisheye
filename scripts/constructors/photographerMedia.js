@@ -22,12 +22,10 @@ export default class PhotographerMedia {
     const heart = mediaLikes.querySelector(".heart");
     mediaLikes.addEventListener("click", () => {
       if (mediaCount.classList.contains("liked_count")) {
-        console.log("unlike");
         this.observer.fire("UNLIKE");
         mediaCount.classList.remove("liked_count");
         heart.classList.remove("liked_heart");
       } else {
-        console.log("like");
         this.observer.fire("LIKE");
         mediaCount.classList.add("liked_count");
         heart.classList.add("liked_heart");
@@ -38,7 +36,7 @@ export default class PhotographerMedia {
   getMediaCardDOM() {
     let media;
     this.image !== null
-      ? (media = `<img decoding="async" class="media_item" src="/assets/medias/${this.image}" alt="${this.title}"></img>`)
+      ? (media = `<img loading="lazy" class="media_item" src="/assets/medias/${this.image}" alt="${this.title}"></img>`)
       : (media = `<video class="media_item" aria-label="${this.title}" width="350" height="350" controls>
           <source src="/assets/medias/${this.video}#t=0.1" type="video/mp4" />
         </video>`);

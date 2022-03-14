@@ -12,7 +12,6 @@ export default class LikesObserver {
   }
 
   fire(action) {
-    console.log("test observer");
     this.observers.forEach((observer) => observer.update(action));
   }
 }

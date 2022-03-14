@@ -17,7 +17,7 @@ export default class PhotographerProfil {
     const profilCard = `
       <article class="photographer_card">
         <a href="photographer.html?id=${this.id}" role="link" aria-label="Profil de ${this.name}">
-          <img decoding="async" class="photographer_img" src="/assets/photographers/${this.portrait}" alt="Portrait de ${this.name}">
+          <img loading="lazy" class="photographer_img" src="/assets/photographers/${this.portrait}" alt="Portrait de ${this.name}">
           <h2 class="photographer_name">${this.name}</h2>
         </a>
         <p class="photographer_location">${this.city}, ${this.country}</p>
@@ -38,7 +38,7 @@ export default class PhotographerProfil {
         <button class="contact_button" role="button" aria-label="Contact Me">
           Contactez-moi
         </button>
-        <img decoding="async" class="photographer_img" src="/assets/photographers/${this.portrait}" alt="Portrait de ${this.name}">
+        <img loading="lazy" class="photographer_img" src="/assets/photographers/${this.portrait}" alt="Portrait de ${this.name}">
       </header>`;
     return header;
   }

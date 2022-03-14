@@ -37,19 +37,28 @@ export default class PhotographerPage {
     sortByLikes(selectedMedias);
 
     let totalLikes = 0;
+    let formatedMedias = [];
+
     selectedMedias.forEach((media) => {
       totalLikes += media.likes;
       const formatedMedia = new PhotographerMedia(media, likesObserver);
       const mediaCard = formatedMedia.getMediaCardDOM();
       const mediasContainer = document.querySelector(".medias_section");
       mediasContainer.innerHTML += mediaCard;
-      const likeCounter = new LikesCounter(media.likes, media.id);
-      likesObserver.subscribe(likeCounter);
-      formatedMedia.handleLikesCounter();
+      formatedMedias.push(formatedMedia);
     });
+
+    //add photographer details
     const selectedProfilMetrics =
       selectedProfil.getPhotographerMetrics(totalLikes);
     headerWrapper.insertAdjacentHTML("beforeend", selectedProfilMetrics);
+
+    //activate likes counters observer
+    formatedMedias.forEach((media) => {
+      const likeCounter = new LikesCounter(media.likes, media.id, totalLikes);
+      likesObserver.subscribe(likeCounter);
+      media.handleLikesCounter();
+    });
 
     //filters medias feature
     const filtersFeature = new MediasFilter(selectedMedias);
