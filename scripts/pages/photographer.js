@@ -56,7 +56,7 @@ export default class PhotographerPage {
     //activate likes counters observer
     function activateCounters(mediaList) {
       mediaList.forEach((media) => {
-        const likeCounter = new LikesCounter(media.likes, media.id, totalLikes);
+        const likeCounter = new LikesCounter(media.likes, media.id);
         likesObserver.subscribe(likeCounter);
         media.handleLikesCounter();
       });
