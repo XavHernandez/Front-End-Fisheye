@@ -4,8 +4,8 @@ import PhotographerMedia from "../constructors/photographerMedia.js";
 import MediasFilter from "../features/mediasFilter.js";
 import LikesCounter from "../features/likesCounter.js";
 import LikesObserver from "../features/likesObserver.js";
+import Modal from "../features/modal.js";
 import { sortByLikes } from "../utils/filters.js";
-import { displayModal, closeModal } from "../utils/contactForm.js";
 
 export default class PhotographerPage {
   static async render() {
@@ -74,12 +74,11 @@ export default class PhotographerPage {
         activateCounters(filtersFeature.getMedias());
       });
 
-    displayModal();
-    closeModal();
+    //contact modal handlers
+    const modal = new Modal(selectedProfil);
+    modal.handleModal();
   }
 }
 
 //carrousel (video+image)
-//contactForm
-
 //accessibility

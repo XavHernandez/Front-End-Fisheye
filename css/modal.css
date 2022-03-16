@@ -1,24 +1,37 @@
-#contact_modal {
+.contact_modal {
+  visibility: hidden;
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
+  transition: visibility 0.5s;
+}
+
+.visible {
+  visibility: visible;
 }
 
 .modal {
-  position: relative;
+  position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, calc(-50% - 50px)) scale(0.3);
   border-radius: 5px;
   background-color: var(--lightred);
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  width: 40vw;
+  max-width: 900px;
+  min-width: 300px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
     rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  opacity: 0;
+  transition: all 0.4s;
+}
+
+.contact_modal.visible .modal {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+  transition: all 0.4s;
 }
 
 .modal header {
@@ -26,19 +39,20 @@
   align-items: flex-start;
   justify-content: space-between;
   margin-top: 20px;
-  width: 90%;
 }
 
 .modal header img {
   cursor: pointer;
   width: 30px;
   margin-top: 20px;
+  margin-right: 50px;
 }
 
 .modal-titles {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  margin-left: -50px;
 }
 
 .modal header h2 {
@@ -53,9 +67,10 @@
 
 form {
   display: flex;
-  width: 90%;
+  width: 100%;
   flex-direction: column;
   align-items: flex-start;
+  padding: 0 50px;
   margin-top: 50px;
 }
 
@@ -68,7 +83,7 @@ form label {
 form div {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 87%;
   align-items: self-start;
   margin-bottom: 26px;
 }
@@ -79,6 +94,7 @@ form input {
   border: none;
   border-radius: 5px;
   font-size: 1rem;
+  outline-color: var(--darkred);
 }
 
 form textarea {
@@ -86,9 +102,25 @@ form textarea {
   border: none;
   border-radius: 5px;
   font-size: 1rem;
+  outline-color: var(--darkred);
+  resize: none;
 }
 
-.contact_button {
+.contact_button_dialog {
   margin-bottom: 30px;
   height: 60px;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  padding: 11px;
+  margin-right: 20px;
+  width: 170px;
+  border: none;
+  background-color: var(--darkred);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.contact_button_dialog:focus-visible {
+  outline: 2px solid white;
 }

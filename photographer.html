@@ -60,18 +60,23 @@
       <div class="medias_section"></div>
     </main>
     <div
-      id="contact_modal"
+      class="contact_modal"
       role="dialog"
       aria-hidden="true"
       aria-describedby="contact_me"
+      aria-labelledby="contact_me"
     >
       <div class="modal">
         <header>
           <div class="modal-titles">
             <h2 id="contact_me">Contactez-moi</h2>
-            <h2 class="name">Name</h2>
+            <h2 class="name" aria-label="Nom du Photographe">Name</h2>
           </div>
-          <img src="assets/icons/close.svg" />
+          <img
+            aria-label="Close Modal"
+            src="assets/icons/close.svg"
+            alt="Croix pour fermer le formulaire"
+          />
         </header>
         <form>
           <div>
@@ -84,7 +89,7 @@
             <label>Votre Message</label>
             <textarea type="textarea" rows="6"></textarea>
           </div>
-          <button class="contact_button">Envoyer</button>
+          <button class="contact_button_dialog">Envoyer</button>
         </form>
       </div>
     </div>

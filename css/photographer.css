@@ -1,10 +1,6 @@
 @import url("style.css");
 @import url("modal.css");
 
-#contact_modal {
-  display: none;
-}
-
 .photographer_header {
   display: flex;
   justify-content: space-between;
@@ -55,10 +51,15 @@
   margin-right: 20px;
   width: 170px;
   height: 70px;
-  border: none;
+  border: 2px solid white;
   background-color: var(--darkred);
   border-radius: 5px;
   cursor: pointer;
+  white-space: nowrap;
+}
+
+.contact_button:focus-visible {
+  outline: 2px solid var(--darkred);
 }
 
 .medias_section {
