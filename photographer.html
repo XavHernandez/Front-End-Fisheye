@@ -55,7 +55,7 @@
         />
       </a>
     </header>
-    <main id="main" aria-hidden="false">
+    <main id="main" aria-hidden="false" aria-label="Section Principale">
       <div class="filters_section"></div>
       <div class="medias_section"></div>
     </main>
@@ -80,9 +80,9 @@
         </header>
         <form
           action="#"
+          method="post"
           role="group"
           id="contactForm"
-          name="contactForm"
           aria-labelledby="contact_me"
         >
           <div>
@@ -91,7 +91,7 @@
               type="text"
               name="prenom"
               id="firstname"
-              placeholder="Votre prénom"
+              placeholder="Albert"
               aria-labelledby="prenom"
               autofocus
               required
@@ -101,7 +101,7 @@
               type="text"
               name="nom"
               id="lastname"
-              placeholder="Votre nom"
+              placeholder="Einstein"
               aria-labelledby="nom"
               required
             />
@@ -110,7 +110,7 @@
               type="email"
               name="email"
               id="email"
-              placeholder="Votre email"
+              placeholder="exemple@google.com"
               aria-labelledby="email"
               required
             />
@@ -119,12 +119,18 @@
               type="textarea"
               name="message"
               id="message"
-              placeholder="Votre message"
+              placeholder="Votre message..."
               aria-labelledby="message"
               rows="6"
             ></textarea>
           </div>
-          <button class="contact_button_dialog" type="submit">Envoyer</button>
+          <button
+            class="contact_button_dialog"
+            type="submit"
+            aria-label="Envoyer Message"
+          >
+            Envoyer
+          </button>
         </form>
       </div>
     </div>

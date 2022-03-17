@@ -31,6 +31,21 @@ export default class PhotographerMedia {
         heart.classList.add("liked_heart");
       }
     });
+    this.preserveMediaCountState();
+  }
+
+  preserveMediaCountState() {
+    const mediaLikes = document.querySelector(`[data-id="${this.id}"]`);
+    const mediaCount = mediaLikes.querySelector(".media_count");
+    const heart = mediaLikes.querySelector(".heart");
+    const mediaObserver = this.observer.observers.find(
+      (obs) => obs.id === this.id
+    );
+    if (mediaObserver.mediaCount === this.likes + 1) {
+      mediaCount.textContent = mediaObserver.mediaCount;
+      mediaCount.classList.add("liked_count");
+      heart.classList.add("liked_heart");
+    }
   }
 
   getMediaCardDOM() {

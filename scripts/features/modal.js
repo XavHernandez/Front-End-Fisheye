@@ -13,6 +13,7 @@ export default class Modal {
     this.modalWrapper = document.querySelector(".contact_modal");
     this.modal = document.querySelector(".modal");
     this.main = document.getElementById("main");
+    this.formData = {};
   }
 
   toggleVisibility() {
@@ -24,9 +25,21 @@ export default class Modal {
       document.querySelectorAll("#contactForm input")
     );
     formInputs.push(document.querySelector("#contactForm textarea"));
-    let formData = {};
-    formInputs.forEach((form) => (formData[form.name] = form.value));
-    console.log("Sending JSON data:", JSON.stringify(formData));
+    formInputs.forEach((form) => {
+      if (form.value) {
+        this.formData[form.name] = form.value;
+      }
+    });
+    this.validateForm()
+      ? console.log("Sending JSON data:", JSON.stringify(this.formData))
+      : console.log("Please, complete the form.");
+  }
+
+  validateForm() {
+    if (Object.keys(this.formData).length !== 4) {
+      return false;
+    }
+    return true;
   }
 
   displayModal() {
@@ -39,18 +52,23 @@ export default class Modal {
   }
 
   closeModal() {
+    //close modal with cross button
     this.closeButton.addEventListener("click", () => {
       this.main.setAttribute("aria-hidden", false);
       this.modalWrapper.setAttribute("aria-hidden", true);
       this.toggleVisibility();
     });
+    //close modal with submit button
     this.submitButton.addEventListener("click", (event) => {
       event.preventDefault();
       this.handleFormData();
-      this.main.setAttribute("aria-hidden", false);
-      this.modalWrapper.setAttribute("aria-hidden", true);
-      this.toggleVisibility();
+      if (this.validateForm()) {
+        this.main.setAttribute("aria-hidden", false);
+        this.modalWrapper.setAttribute("aria-hidden", true);
+        this.toggleVisibility();
+      }
     });
+    //close modal with keyboard
     document.addEventListener("keyup", (event) => {
       if (
         event.key === "Escape" &&

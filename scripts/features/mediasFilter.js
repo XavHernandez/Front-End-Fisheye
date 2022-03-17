@@ -1,4 +1,3 @@
-import PhotographerMedia from "../constructors/photographerMedia.js";
 import { sortByLikes, sortByDate, sortByTitle } from "../utils/filters.js";
 
 /**
@@ -35,9 +34,12 @@ export default class MediasFilter {
     }
 
     this.medias.forEach((media) => {
-      const formatedMedia = new PhotographerMedia(media);
-      const mediaCard = formatedMedia.getMediaCardDOM();
+      const mediaCard = media.getMediaCardDOM();
       this.mediasContainer.innerHTML += mediaCard;
+    });
+
+    this.medias.forEach((media) => {
+      media.handleLikesCounter();
     });
   }
 

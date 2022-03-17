@@ -8,23 +8,20 @@ export default class LikesCounter {
   constructor(mediaCount, id) {
     this.id = id;
     this.mediaCount = mediaCount;
-    const mediaLikes = document.querySelector(`[data-id="${this.id}"]`);
-    this.mediaCountContent = mediaLikes.querySelector(".media_count");
-    this.totalLikesContent = document.querySelector(".likes");
+    this.totalLikes = null;
   }
 
   update(action) {
+    const mediaLikes = document.querySelector(`[data-id="${this.id}"]`);
+    this.totalLikes = document.querySelector(".likes").textContent;
     if (action === "LIKE") {
       this.mediaCount++;
-      let totalLikes = parseInt(this.totalLikesContent.textContent);
-      totalLikes++;
-      this.totalLikesContent.textContent = totalLikes;
+      this.totalLikes++;
     } else {
       this.mediaCount--;
-      let totalLikes = parseInt(this.totalLikesContent.textContent);
-      totalLikes--;
-      this.totalLikesContent.textContent = totalLikes;
+      this.totalLikes--;
     }
-    this.mediaCountContent.textContent = this.mediaCount;
+    mediaLikes.querySelector(".media_count").textContent = this.mediaCount;
+    document.querySelector(".likes").textContent = this.totalLikes;
   }
 }

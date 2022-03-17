@@ -27,15 +27,16 @@ export default class PhotographerPage {
     const headerWrapper = document.querySelector("#main");
     headerWrapper.insertAdjacentHTML("afterbegin", selectedProfilHeader);
 
-    //init Likes Counters Observer
-    const likesObserver = new LikesObserver();
-
     //filter medias data and display selected profil medias + likes counters
     const selectedMedias = medias.filter(
       (media) => media.photographerId === +selectedID
     );
     sortByLikes(selectedMedias);
 
+    //init Likes Counters Observer
+    const likesObserver = new LikesObserver();
+
+    //BUILD PAGE
     let totalLikes = 0;
     let formatedMedias = [];
 
@@ -54,25 +55,15 @@ export default class PhotographerPage {
     headerWrapper.insertAdjacentHTML("beforeend", selectedProfilMetrics);
 
     //activate likes counters observer
-    function activateCounters(mediaList) {
-      mediaList.forEach((media) => {
-        const likeCounter = new LikesCounter(media.likes, media.id);
-        likesObserver.subscribe(likeCounter);
-        media.handleLikesCounter();
-      });
-    }
-    activateCounters(formatedMedias);
+    formatedMedias.forEach((media) => {
+      const likeCounter = new LikesCounter(media.likes, media.id);
+      likesObserver.subscribe(likeCounter);
+      media.handleLikesCounter();
+    });
 
     //filters medias feature
     const filtersFeature = new MediasFilter(formatedMedias);
     filtersFeature.render();
-    //re-apply likes observers after filtering
-    document
-      .querySelector(".filters_section")
-      .querySelector("form")
-      .addEventListener("change", () => {
-        activateCounters(filtersFeature.getMedias());
-      });
 
     //contact modal handlers
     const modal = new Modal(selectedProfil);
