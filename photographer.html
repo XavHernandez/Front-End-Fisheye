@@ -64,7 +64,6 @@
       role="dialog"
       aria-hidden="true"
       aria-describedby="contact_me"
-      aria-labelledby="contact_me"
     >
       <div class="modal">
         <header>
@@ -73,23 +72,59 @@
             <h2 class="name" aria-label="Nom du Photographe">Name</h2>
           </div>
           <img
-            aria-label="Close Modal"
+            class="close_modal"
+            aria-label="Fermer Modal"
             src="assets/icons/close.svg"
             alt="Croix pour fermer le formulaire"
           />
         </header>
-        <form>
+        <form
+          action="#"
+          role="group"
+          id="contactForm"
+          name="contactForm"
+          aria-labelledby="contact_me"
+        >
           <div>
-            <label>Prénom</label>
-            <input autofocus />
-            <label>Nom</label>
-            <input />
-            <label>Email</label>
-            <input />
-            <label>Votre Message</label>
-            <textarea type="textarea" rows="6"></textarea>
+            <label for="firstname" id="prenom">Prénom</label>
+            <input
+              type="text"
+              name="prenom"
+              id="firstname"
+              placeholder="Votre prénom"
+              aria-labelledby="prenom"
+              autofocus
+              required
+            />
+            <label for="lastname" id="nom">Nom</label>
+            <input
+              type="text"
+              name="nom"
+              id="lastname"
+              placeholder="Votre nom"
+              aria-labelledby="nom"
+              required
+            />
+            <label for="email" id="email">Email</label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Votre email"
+              aria-labelledby="email"
+              required
+            />
+            <label for="message" id="message">Votre Message</label>
+            <textarea
+              type="textarea"
+              name="message"
+              id="message"
+              placeholder="Votre message"
+              aria-labelledby="message"
+              rows="6"
+            ></textarea>
           </div>
-          <button class="contact_button_dialog">Envoyer</button>
+          <button class="contact_button_dialog" type="submit">Envoyer</button>
         </form>
       </div>
     </div>
