@@ -1,6 +1,11 @@
 import PhotographerMedia from "../constructors/photographerMedia.js";
 import { sortByLikes, sortByDate, sortByTitle } from "../utils/filters.js";
 
+/**
+ *
+ * @param {array} medias
+ */
+
 export default class MediasFilter {
   constructor(medias) {
     this.medias = medias;

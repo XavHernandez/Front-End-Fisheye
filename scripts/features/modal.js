@@ -1,4 +1,9 @@
 export default class Modal {
+  /**
+   *
+   * @param {object} photographer
+   */
+
   constructor(photographer) {
     this.photographer = photographer;
     this.photographerBadge = document.querySelector(".name");

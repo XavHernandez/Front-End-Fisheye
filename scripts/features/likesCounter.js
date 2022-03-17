@@ -1,4 +1,10 @@
 export default class LikesCounter {
+  /**
+   *
+   * @param {number} mediaCount
+   * @param {number} id
+   */
+
   constructor(mediaCount, id) {
     this.id = id;
     this.mediaCount = mediaCount;
