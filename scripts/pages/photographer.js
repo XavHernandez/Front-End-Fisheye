@@ -75,6 +75,3 @@ export default class PhotographerPage {
     lightbox.handleLightBox();
   }
 }
-
-//carrousel (video+image)
-//accessibility
