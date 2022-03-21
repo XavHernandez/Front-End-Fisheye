@@ -1,4 +1,9 @@
 export default class LightBox {
+  /**
+   *
+   * @param {array} medias
+   */
+
   constructor() {
     this.lightBoxWrapper = document.querySelector(".lightbox__wrapper");
     this.lightBoxModal = document.querySelector(".lighbox__modal");
