@@ -58,7 +58,9 @@ export default class PhotographerMedia {
 
     const mediaCard = `
       <article class="media_card">
-        ${media}
+        <a class="media_closeup" aria-label="Image CloseUp" tabindex="0">
+          ${media}
+        </a>
         <div class="media_infos">
           <h2 class="media_title">${this.title}</h2>
           <div class="media_likes" data-id=${this.id}>

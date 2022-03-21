@@ -1,6 +1,7 @@
 @import url("photographer.css");
 @import url("modal.css");
 @import url("filters.css");
+@import url("lightbox.css");
 
 :root {
   --darkred: #901c1c;

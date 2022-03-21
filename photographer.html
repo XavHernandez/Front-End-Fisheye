@@ -86,32 +86,32 @@
           aria-labelledby="contact_me"
         >
           <div>
-            <label for="firstname" id="prenom">Prénom</label>
+            <label for="firstname" id="First Name">Prénom</label>
             <input
               type="text"
               name="prenom"
               id="firstname"
               placeholder="Albert"
-              aria-labelledby="prenom"
+              aria-labelledby="First Name"
               autofocus
               required
             />
-            <label for="lastname" id="nom">Nom</label>
+            <label for="lastname" id="Last Name">Nom</label>
             <input
               type="text"
               name="nom"
               id="lastname"
               placeholder="Einstein"
-              aria-labelledby="nom"
+              aria-labelledby="Last Name"
               required
             />
-            <label for="email" id="email">Email</label>
+            <label for="email" id="Email">Email</label>
             <input
               type="email"
               name="email"
               id="email"
               placeholder="exemple@google.com"
-              aria-labelledby="email"
+              aria-labelledby="Email"
               required
             />
             <label for="message" id="message">Votre Message</label>
@@ -124,14 +124,27 @@
               rows="6"
             ></textarea>
           </div>
-          <button
-            class="contact_button_dialog"
-            type="submit"
-            aria-label="Envoyer Message"
-          >
+          <button class="contact_button_dialog" type="submit" aria-label="Send">
             Envoyer
           </button>
         </form>
+      </div>
+    </div>
+    <div
+      class="lightbox__wrapper"
+      role="dialog"
+      aria-label="Image CloseUp View"
+      aria-hidden="true"
+    >
+      <div class="lightbox__modal">
+        <div class="lightbox__close" aria-label="Close Image Close View">
+          &#10005;
+        </div>
+        <div class="lightbox__previous" aria-lable="Previous Image">
+          &#8701;
+        </div>
+        <div class="lightbox__image"></div>
+        <div class="lightbox__next" aria-label="Next Image">&#8702;</div>
       </div>
     </div>
     <script type="module" src="scripts/main.js"></script>

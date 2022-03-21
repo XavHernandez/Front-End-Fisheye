@@ -78,6 +78,14 @@
   max-width: 350px;
 }
 
+.media_closeup {
+  cursor: pointer;
+}
+
+.media_closeup:focus-visible {
+  outline: 2px solid var(--darkred);
+}
+
 .media_item {
   width: 350px;
   height: 350px;

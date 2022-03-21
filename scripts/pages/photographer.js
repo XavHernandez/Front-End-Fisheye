@@ -5,6 +5,7 @@ import MediasFilter from "../features/mediasFilter.js";
 import LikesCounter from "../features/likesCounter.js";
 import LikesObserver from "../features/likesObserver.js";
 import Modal from "../features/modal.js";
+import LightBox from "../features/lightBox.js";
 import { sortByLikes } from "../utils/filters.js";
 
 export default class PhotographerPage {
@@ -68,6 +69,10 @@ export default class PhotographerPage {
     //contact modal handlers
     const modal = new Modal(selectedProfil);
     modal.handleModal();
+
+    //lightbox modal handlers
+    const lightbox = new LightBox();
+    lightbox.handleLightBox();
   }
 }
 

@@ -1,0 +1,58 @@
+.lightbox__wrapper {
+  visibility: hidden;
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  transition: visibility 0.5s;
+}
+
+.visible {
+  visibility: visible;
+}
+
+.lightbox__modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 60vw;
+  height: 70vh;
+  border-radius: 12px;
+  background-color: white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, calc(-50% - 50px)) scale(0.3);
+  opacity: 0;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  transition: all 0.4s;
+}
+
+.lightbox__wrapper.visible .lightbox__modal {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+  transition: all 0.4s;
+}
+
+.lightbox__close {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--darkred);
+}
+
+.lightbox__image {
+  height: 90%;
+  width: 90%;
+}
+
+.lightbox__previous,
+.lightbox__next {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--darkred);
+}
