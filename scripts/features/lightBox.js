@@ -18,6 +18,16 @@ export default class LightBox {
         this.lightBoxWrapper.setAttribute("aria-hidden", false);
         this.toggleVisibility();
       });
+      wrapper.addEventListener("keyup", (event) => {
+        if (
+          event.key === "Enter" &&
+          !this.lightBoxWrapper.classList.contains("visible")
+        ) {
+          this.main.setAttribute("aria-hidden", true);
+          this.lightBoxWrapper.setAttribute("aria-hidden", false);
+          this.toggleVisibility();
+        }
+      });
     });
   }
 
