@@ -47,8 +47,23 @@
 }
 
 .lightbox__image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 90%;
   width: 90%;
+}
+
+.lightbox__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.lightbox__image video {
+  width: 100%;
+  height: 100%;
 }
 
 .lightbox__previous,
@@ -57,4 +72,5 @@
   font-weight: bold;
   color: var(--darkred);
   cursor: pointer;
+  padding: 0 2rem;
 }

@@ -48,7 +48,7 @@ export default class PhotographerMedia {
     }
   }
 
-  getMediaCardDOM() {
+  getMediaContent() {
     let media;
     this.image !== null
       ? (media = `<img loading="lazy" class="media_item" src="/assets/medias/${this.image}" alt="${this.title}"></img>`)
@@ -56,10 +56,16 @@ export default class PhotographerMedia {
           <source src="/assets/medias/${this.video}#t=0.1" type="video/mp4" />
         </video>`);
 
+    return media;
+  }
+
+  getMediaCardDOM() {
     const mediaCard = `
       <article class="media_card">
-        <a class="media_closeup" aria-label="Image CloseUp" tabindex="0">
-          ${media}
+        <a class="media_lightbox" aria-label="Image CloseUp" tabindex="0" data-media=${
+          this.id
+        }>
+          ${this.getMediaContent()}
         </a>
         <div class="media_infos">
           <h2 class="media_title">${this.title}</h2>

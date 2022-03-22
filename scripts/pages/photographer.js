@@ -71,7 +71,7 @@ export default class PhotographerPage {
     modal.handleModal();
 
     //lightbox modal handlers
-    const lightbox = new LightBox();
+    const lightbox = new LightBox(formatedMedias);
     lightbox.handleLightBox();
   }
 }

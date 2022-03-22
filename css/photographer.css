@@ -78,11 +78,11 @@
   max-width: 350px;
 }
 
-.media_closeup {
+.media_lightbox {
   cursor: pointer;
 }
 
-.media_closeup:focus-visible {
+.media_lightbox:focus-visible {
   outline: 2px solid var(--darkred);
 }
 

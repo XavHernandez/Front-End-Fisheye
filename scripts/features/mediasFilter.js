@@ -1,4 +1,5 @@
 import { sortByLikes, sortByDate, sortByTitle } from "../utils/filters.js";
+import LightBox from "./lightBox.js";
 
 /**
  *
@@ -41,6 +42,9 @@ export default class MediasFilter {
     this.medias.forEach((media) => {
       media.handleLikesCounter();
     });
+
+    const lightbox = new LightBox(this.medias);
+    lightbox.handleLightBox();
   }
 
   getMedias() {
