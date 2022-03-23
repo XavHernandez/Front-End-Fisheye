@@ -30,6 +30,7 @@ export default class LightBox {
         this.index = this.medias.indexOf(currentMedia);
         this.renderCarrousel(currentMedia);
         this.toggleVisibility();
+        this.lightBoxWrapper.focus();
       });
       link.addEventListener("keyup", (event) => {
         if (
@@ -44,6 +45,7 @@ export default class LightBox {
           this.index = this.medias.indexOf(currentMedia);
           this.renderCarrousel(currentMedia);
           this.toggleVisibility();
+          this.lightBoxWrapper.focus();
         }
       });
     });

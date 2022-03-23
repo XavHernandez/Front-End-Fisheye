@@ -48,6 +48,7 @@ export default class Modal {
       this.modalWrapper.setAttribute("aria-hidden", false);
       this.photographerBadge.textContent = this.photographer.name;
       this.toggleVisibility();
+      this.modalWrapper.focus();
     });
   }
 
