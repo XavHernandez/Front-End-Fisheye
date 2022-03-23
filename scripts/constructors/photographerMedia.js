@@ -51,9 +51,9 @@ export default class PhotographerMedia {
   getMediaContent() {
     let media;
     this.image !== null
-      ? (media = `<img loading="lazy" class="media_item" src="/assets/medias/${this.image}" alt="${this.title}"></img>`)
+      ? (media = `<img loading="lazy" class="media_item" src="/Front-End-Fisheye/assets/medias/${this.image}" alt="${this.title}"></img>`)
       : (media = `<video class="media_item" aria-label="${this.title}" width="350" height="350" controls>
-          <source src="/assets/medias/${this.video}#t=0.1" type="video/mp4" />
+          <source src="/Front-End-Fisheye/assets/medias/${this.video}#t=0.1" type="video/mp4" />
         </video>`);
 
     return media;
