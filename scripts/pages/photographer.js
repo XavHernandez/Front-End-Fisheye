@@ -11,7 +11,9 @@ import { sortByLikes } from "../utils/filters.js";
 export default class PhotographerPage {
   static async render() {
     //connect to API and get data
-    const fisheyeData = new API("../../data/photographers.json");
+    const fisheyeData = new API(
+      "https://xavhernandez.github.io/Front-End-Fisheye/data/photographers.json"
+    );
     const profils = await fisheyeData.getPhotographersProfils();
     const medias = await fisheyeData.getMedias();
 
