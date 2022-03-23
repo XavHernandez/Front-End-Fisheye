@@ -8,8 +8,11 @@ export default class PagesFactory {
    */
 
   constructor(pathname) {
-    console.log(pathname);
-    if (pathname === "/" || pathname === "/index.html") {
+    if (
+      pathname === "/" ||
+      pathname === "/index.html" ||
+      pathname === "/Front-End-Fisheye"
+    ) {
       return IndexPage.render();
     } else if (pathname === "/photographer.html") {
       return PhotographerPage.render();
