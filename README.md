@@ -10,7 +10,7 @@ Sixième projet du parcours "Développeur Front-End" chez OpenClassroom. L'objec
 
 ## Technologies
 
-HTML / CSS / JS Vanilla (Classes)
+HTML / CSS / JS Vanilla (Classes) /
 ESLint
 
 ## Tester le projet
