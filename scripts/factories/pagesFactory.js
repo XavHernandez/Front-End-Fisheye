@@ -11,7 +11,6 @@ export default class PagesFactory {
     if (
       pathname === "/" ||
       pathname === "/index.html" ||
-      pathname === "/Front-End-Fisheye/" ||
       pathname === "/Front-End-Fisheye/index.html"
     ) {
       return IndexPage.render();
