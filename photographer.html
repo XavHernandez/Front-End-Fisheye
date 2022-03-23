@@ -46,7 +46,7 @@
     <title>Fisheye - La gallerie de votre photographe.</title>
   </head>
   <body>
-    <header role="navigation" aria-label="Main Navigation">
+    <header role="navigation" aria-label="Navigation Principale">
       <a href="index.html" role="link" aria-label="Fisheye Home Page">
         <img
           src="assets/images/logo.png"
@@ -55,7 +55,7 @@
         />
       </a>
     </header>
-    <main id="main" aria-hidden="false" aria-label="Section Principale">
+    <main id="main" aria-hidden="true" aria-label="Section Principale">
       <div class="filters_section"></div>
       <div class="medias_section"></div>
     </main>
@@ -93,7 +93,7 @@
               id="firstname"
               placeholder="Albert"
               aria-labelledby="First Name"
-              autofocus
+              autofocus="on"
               required
             />
             <label for="lastname" id="Last Name">Nom</label>
@@ -124,7 +124,11 @@
               rows="6"
             ></textarea>
           </div>
-          <button class="contact_button_dialog" type="submit" aria-label="Send">
+          <button
+            class="contact_button_dialog"
+            type="submit"
+            aria-label="Envoyer votre message"
+          >
             Envoyer
           </button>
         </form>
@@ -137,14 +141,28 @@
       aria-hidden="true"
     >
       <div class="lightbox__modal">
-        <div class="lightbox__close" aria-label="Close Image Close View">
+        <div
+          class="lightbox__close"
+          aria-label="Fermer le carroussel"
+          tabindex="0"
+        >
           &#10005;
         </div>
-        <div class="lightbox__previous" aria-label="Previous Image">
+        <div
+          class="lightbox__previous"
+          aria-label="Voir précédente image"
+          tabindex="0"
+        >
           &#8701;
         </div>
         <div class="lightbox__image"></div>
-        <div class="lightbox__next" aria-label="Next Image">&#8702;</div>
+        <div
+          class="lightbox__next"
+          aria-label="Voir image suivante"
+          tabindex="0"
+        >
+          &#8702;
+        </div>
       </div>
     </div>
     <script type="module" src="scripts/main.js"></script>

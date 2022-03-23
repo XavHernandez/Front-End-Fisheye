@@ -62,16 +62,16 @@ export default class PhotographerMedia {
   getMediaCardDOM() {
     const mediaCard = `
       <article class="media_card">
-        <a class="media_lightbox" aria-label="Image CloseUp" tabindex="0" data-media=${
-          this.id
-        }>
+        <a class="media_lightbox" aria-label="Voir ${
+          this.title
+        }" tabindex="0" data-media=${this.id}>
           ${this.getMediaContent()}
         </a>
         <div class="media_infos">
           <h2 class="media_title">${this.title}</h2>
           <div class="media_likes" data-id=${this.id}>
             <div class="media_count">${this.likes}</div>
-            <div class="heart" aria-label="Media number of likes">&#9829</div>
+            <div class="heart" aria-label="Liker cette image" tabindex="0">&#9829</div>
           </div>
         </div>
       </article>`;

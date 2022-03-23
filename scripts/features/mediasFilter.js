@@ -63,7 +63,7 @@ export default class MediasFilter {
   render() {
     const filterForm = `
       <form class="filter-form" action="#" method="POST">
-          <label for="filter-select" id="Order_By" aria-label="Order By">Trier par: </label>
+          <label for="filter-select" id="Order_By" aria-label="Filter les images">Trier par: </label>
           <select name="filter-select" id="filter-select" aria-labelledby="Order_By">
               <option value="likes">Popularité</option>
               <option value="date">Date</option>

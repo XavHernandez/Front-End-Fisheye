@@ -45,7 +45,7 @@ export default class PhotographerProfil {
 
   getPhotographerMetrics(totalLikes) {
     const aside = `
-      <aside class="photographer_metrics" aria-label="Total number of likes">
+      <aside class="photographer_metrics" aria-label="Nombre total de likes">
         <p class="likes">${totalLikes}</p><span>&#9829</span>
         <p class="price">${this.price}€/jour</p>
       </aside>`;
