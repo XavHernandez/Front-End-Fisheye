@@ -11,10 +11,14 @@ export default class PagesFactory {
     if (
       pathname === "/" ||
       pathname === "/index.html" ||
+      pathname === "/Front-End-Fisheye/" ||
       pathname === "/Front-End-Fisheye/index.html"
     ) {
       return IndexPage.render();
-    } else if (pathname === "/Front-End-Fisheye/photographer.html") {
+    } else if (
+      pathname === "/photographer.html" ||
+      pathname === "/Front-End-Fisheye/photographer.html"
+    ) {
       return PhotographerPage.render();
     } else {
       const error = "404 error : Unrecognized URL";

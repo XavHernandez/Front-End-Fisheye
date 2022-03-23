@@ -3,9 +3,7 @@ import PhotographerProfil from "../constructors/photographerProfil.js";
 
 export default class IndexPage {
   static async render() {
-    const fisheyeData = new API(
-      "../../Front-End-Fisheye/data/photographers.json"
-    );
+    const fisheyeData = new API("../../data/photographers.json");
     const profils = await fisheyeData.getPhotographersProfils();
 
     profils.forEach((profil) => {
