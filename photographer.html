@@ -46,8 +46,8 @@
     <title>Fisheye - La gallerie de votre photographe.</title>
   </head>
   <body>
-    <header role="navigation" aria-label="Navigation Principale">
-      <a href="index.html" role="link" aria-label="Fisheye Home Page">
+    <header aria-label="Navigation Principale">
+      <a href="index.html" aria-label="Fisheye Home Page">
         <img
           src="assets/images/logo.png"
           class="logo"
@@ -81,7 +81,6 @@
         <form
           action="#"
           method="post"
-          role="group"
           id="contactForm"
           aria-labelledby="contact_me"
         >
@@ -93,8 +92,8 @@
               id="firstname"
               placeholder="Albert"
               aria-labelledby="Firstname"
-              autofocus="on"
-              required="true"
+              autofocus
+              required
             />
             <label for="lastname" id="Lastname">Nom</label>
             <input
@@ -103,7 +102,7 @@
               id="lastname"
               placeholder="Einstein"
               aria-labelledby="Lastname"
-              required="true"
+              required
             />
             <label for="email" id="Email">Email</label>
             <input
@@ -112,15 +111,14 @@
               id="email"
               placeholder="exemple@google.com"
               aria-labelledby="Email"
-              required="true"
+              required
             />
-            <label for="message" id="message">Votre Message</label>
+            <label for="message" id="Message">Votre Message</label>
             <textarea
-              type="textarea"
               name="message"
               id="message"
               placeholder="Votre message..."
-              aria-labelledby="message"
+              aria-labelledby="Message"
               rows="6"
             ></textarea>
           </div>
@@ -141,28 +139,10 @@
       aria-hidden="true"
     >
       <div class="lightbox__modal">
-        <div
-          class="lightbox__close"
-          aria-label="Fermer le carroussel"
-          tabindex="0"
-        >
-          &#10005;
-        </div>
-        <div
-          class="lightbox__previous"
-          aria-label="Voir précédente image"
-          tabindex="0"
-        >
-          &#8701;
-        </div>
+        <div class="lightbox__close" tabindex="0">&#10005;</div>
+        <div class="lightbox__previous" tabindex="0">&#8701;</div>
         <div class="lightbox__image"></div>
-        <div
-          class="lightbox__next"
-          aria-label="Voir image suivante"
-          tabindex="0"
-        >
-          &#8702;
-        </div>
+        <div class="lightbox__next" tabindex="0">&#8702;</div>
       </div>
     </div>
     <script type="module" src="scripts/main.js"></script>

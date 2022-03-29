@@ -74,6 +74,8 @@ export default class LightBox {
     const currentMediaCloseUp = media.getMediaContent();
     this.mediaWrapper.innerHTML = "";
     this.mediaWrapper.innerHTML = currentMediaCloseUp;
+    const title = `<div class="lightbox__image__title">${media.title}</div>`;
+    this.mediaWrapper.innerHTML += title;
   }
 
   handleCarrousel() {

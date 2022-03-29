@@ -1,6 +1,3 @@
-@import url("style.css");
-@import url("modal.css");
-
 .photographer_header {
   display: flex;
   justify-content: space-between;
