@@ -15,5 +15,5 @@ ESLint
 
 ## Tester le projet
 
-Pour tester simplement & rapidement, veuillez préférer visiter la démo en ligne : [Hosted on Github-Pages](https://xavhernandez.github.io/Front-End-Fisheye/) <br>
+Pour tester simplement & rapidement, veuillez préférer visiter la démo en ligne : [Hosted on Github-Pages](https://xavhm.github.io/Front-End-Fisheye/) <br>
 Pour auditer l'accessabilité selon les normes WCAG : [Wave Web Tester](https://wave.webaim.org/)
